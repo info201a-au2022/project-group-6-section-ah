@@ -7,7 +7,7 @@ as follows:
 
 |Report | Brief Description|
 |---------------| -----------------|
-|[Project Proposal](./docs/p01-proposal.md) | Our project proposal on police misconduct
+|[Project Proposal](./p01-proposal.md) | Our project proposal on police misconduct
 |[Exploratory Data Analysis](./xxx) | A brief description of your exploratory data analyis report
 |[Interactive Vizualizaiton](./xxx) | A brief description of your final report.
 
