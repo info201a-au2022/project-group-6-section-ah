@@ -1,4 +1,4 @@
-# The Effects of Poverty on Food Insecurities and Disease
+# Police Misconduct in the United States
 Code name: ***PBS Kids***
 
 #### Authors: Bright Hoang | Paul Oh | Salma Yusuf
