@@ -8,8 +8,8 @@ as follows:
 |Report | Brief Description|
 |---------------| -----------------|
 |[Project Proposal](./p01-proposal.md) | Our project proposal on police misconduct
-|[Exploratory Data Analysis](./xxx) | A brief description of your exploratory data analyis report
-|[Interactive Vizualizaiton](./xxx) | A brief description of your final report.
+|[Exploratory Data Analysis](./xxx) | A brief description of your exploratory data analysis report
+|[Interactive Visualization](./xxx) | A brief description of your final report.
 
 
 ## DEVELOPER Note 0
