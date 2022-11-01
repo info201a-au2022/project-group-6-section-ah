@@ -104,3 +104,9 @@ Lum, C., Koper, C. S., & Wu, X. (2021). Can we really defund the police? A nine-
 *Police Misconduct Registry*. Safe Communities Institute (SCI). (2022, October 25). Retrieved from https://sci.usc.edu/police-misconduct-registry/
 
 Thomson-DeVeaux, A., Sharma, D., Bronner, L. (2021, February 22). *Cities Spend Millions On Police Misconduct Every Year. Here’s Why It’s So Difficult to Hold Departments Accountable*. FiveThirtyEight. Retrieved from https://fivethirtyeight.com/features/police-misconduct-costs-cities-millions-every-year-but-thats-where-the-accountability-ends/
+
+## Appendix A: Questions
+
+* What are common mistakes that you’ve seen students make in this project in the past?
+* What timeline should we be following for the project?
+* Is there a recommendation for when we get certain things done?
