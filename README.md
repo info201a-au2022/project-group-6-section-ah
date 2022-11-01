@@ -1,7 +1,7 @@
 # Final Project Repository
 **INFO-201: _Foundational Skills For Data Science_ (Autumn 2022)**
 
-*P01: Project Proposal*: [Police Misconduct in the United States](./docs/p01-proposal.md)
+*P01: Project Proposal*: [Police Misconduct in the United States](./p01-proposal.md)
 
 
 |Project Directories | Brief Description|
