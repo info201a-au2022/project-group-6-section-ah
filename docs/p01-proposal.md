@@ -68,8 +68,8 @@ The first dataset shows a list of police misconduct cases all throughout the Uni
 
 | Number of: | Police Misconduct Registry | “Police Settlements” (chicago_edited) | “Police Settlements” (new_york_edited) |
 | ----------- | ----------- | ----------- | ----------- |
-| Columns | 452 | 1515 | 32632 |
-| Rows | 11 | 24 | 21 |
+| Columns | 11 | 24 | 21 |
+| Rows | 452 | 1515 | 32632 |
 
 **a)** The first dataset in the dataset links was created by the USC Safe Communities Institute (SCI). The institute made the Police Misconduct Registry in hopes of increasing transparency within police departments across the country and also improving policies within the police force through learning from the dataset. The dataset is updated frequently and was last updated on October 25th, 2022. The other datasets were created by Amelia Thomson-DeVeaux, Laura Bronner, and Damini Sharma. Published on 2/22/22, the datasets go in depth about the increase of police settlements for misconduct within the last few years. It explores why that could be possible by acknowledging different possibilities that are all worth thinking about, such as “are police misconduct cases happening more?” and “are people coming out with police misconduct stories to cause the increase in settlements?”
 
