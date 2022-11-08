@@ -1,6 +1,6 @@
 ---
 title: "Your Project Title"
-author: "project team members"
+author: "project team member"
 date: "1/22/2022"
 output: html_document
 ---
@@ -19,7 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ### Example 1: Source some code and run a function
 ```{r}
 # Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and 
+# directory(..), down into source (/source), and
 # then "source" an R file (data_access.R)
 source("../source/data_access.R")
 data_access_test()
@@ -31,9 +31,9 @@ data_access_test()
 msg <- data_access_test(" Morgan!")
 ```
 
-> `r msg` Hope you have a good day!! 
+> `r msg` Hope you have a good day!!
 
-## ABOUT THIS FILE: 
+## ABOUT THIS FILE:
 
 This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
