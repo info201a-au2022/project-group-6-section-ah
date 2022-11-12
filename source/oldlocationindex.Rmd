@@ -1,5 +1,6 @@
 ---
 title: "Data Analysis Report on Police Misconduct"
+author: "Bright Hoang | Paul Oh | Salma Yusuf"
 output: html_document
 date: "Autumn 2022"
 ---
