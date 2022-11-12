@@ -28,12 +28,13 @@ The FitnessGram^TM^ Pacer Test is a multistage aerobic capacity test that progre
 
 There were a total of `r round(chicago_info$total)` dollars spent on police settlements.
 
+**Chicago Summary Points:**
+
+Police misconduct cases involving `r chicago_highest_median_type` had the 
+highest median settlements of $`r chicago_highest_median`.
 
 
-
-
-
-
-
+The city of Chicago spent a median of $`r chicago_yearly_median` annually on
+police misconduct settlements.
 
 
