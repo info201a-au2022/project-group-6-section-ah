@@ -12,6 +12,7 @@ options(scipen=999)
 
 ``` {r summary_info_code, echo = FALSE, include = FALSE}
 source("../source/summary_info.R")
+source("../source/chart_2.R")
 ```
 
 ## This will be the start of my example:
@@ -33,7 +34,6 @@ There were a total of `r round(chicago_info$total)` dollars spent on police sett
 
 Police misconduct cases involving `r chicago_highest_median_type` had the 
 highest median settlements of $`r chicago_highest_median`.
-
 
 The city of Chicago spent a median of $`r chicago_yearly_median` annually on
 police misconduct settlements.

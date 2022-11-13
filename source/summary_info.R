@@ -156,11 +156,11 @@ chicago_yearly_median <- prettyNum(chicago_yearly_median,
 
 # salma
 
-read.csv("../data/los_angeles_edited.csv")
+la <- read.csv("../data/los_angeles_edited.csv")
 LA_info <-list()
-LA_info$rows <-nrow(`Los Angeles`)
-LA_info$columns <-ncol(`Los Angeles`)
-settlements <-`Los Angeles`$amount_awarded
+LA_info$rows <-nrow(la)
+LA_info$columns <-ncol(la)
+settlements <- la$amount_awarded
 LA_info$median <-median(settlements, na.rm = T)
 LA_info$mean <-mean(settlements, na.rm = T)
 LA_info$max <-max(settlements, na.rm = T)
@@ -168,25 +168,26 @@ LA_info$min <-min(settlements, na.rm = T)
 LA_info$range <-range(settlements, na.rm = T)
 LA_info$sd <-sd(settlements, na.rm = T)
 
+#functions for additional summary 
+num_civil_rights <- la %>%
+  filter(str_detect(la$summary_allegations, "Civil Rights"))
+
+LA_gender_discrimination_charges <- la %>%
+  filter(str_detect(la$summary_allegations, "Gender Discrimination"))
+
 #additional
 LA_info$civilrights <-sum(num_civil_rights$amount_awarded, na.rm = F)
 LA_info$gender_discrimination_charges <-nrow(LA_gender_discrimination_charges)
 
-#functions for additional summary 
-num_civil_rights <-`Los Angeles` %>%
-  filter(str_detect(`Los Angeles`$summary_allegations, "Civil Rights"))
-LA_gender_discrimination_charges <-`Los Angeles` %>%
-  filter(str_detect(`Los Angeles`$summary_allegations, "Gender Discrimination"))
-
 #prompt for dynamic paragraph
 #The city of Los Angeles spent a total amount of "dollar amount" on police settlements in 2018. 
 
-year_amt <- `Los Angeles` %>% 
-  filter(str_detect(`Los Angeles`$calendar_year, "2018"))
+year_amt <- la %>% 
+  filter(str_detect(la$calendar_year, "2018"))
 total_settlements <-sum(year_amt$amount_awarded, na.rm = F)
 
 
-
+v <- 6
 
 
 
