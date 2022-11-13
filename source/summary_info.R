@@ -78,8 +78,94 @@ chicago_info$false_arrest_charges <- nrow(chicago_false_arrest_amt)
 
 View(chicago_info)
 
-# salma
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# salma
 read.csv("../data/los_angeles_edited.csv")
 LA_info <-list()
 LA_info$rows <-nrow(`Los Angeles`)
@@ -91,9 +177,10 @@ LA_info$max <-max(settlements, na.rm = T)
 LA_info$min <-min(settlements, na.rm = T)
 LA_info$range <-range(settlements, na.rm = T)
 LA_info$sd <-sd(settlements, na.rm = T)
+LA_info$
 
 
-bargraph
+
 
 
 
