@@ -38,4 +38,4 @@ highest median settlements of $`r chicago_highest_median`.
 The city of Chicago spent a median of $`r chicago_yearly_median` annually on
 police misconduct settlements.
 
-
+The city of Los Angeles spent a total amount of $r total_settlements on police settlements in 2018.
