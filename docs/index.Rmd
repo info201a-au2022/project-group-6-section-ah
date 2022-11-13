@@ -1,54 +1,41 @@
 ---
-title: "Your Project Title"
-author: "project team member"
-date: "1/22/2022"
+title: "Data Analysis Report on Police Misconduct"
+author: "Bright Hoang | Paul Oh | Salma Yusuf"
 output: html_document
+date: "Autumn 2022"
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+options(scipen=999)
 ```
 
-## What is this file for?
-
-* This file will eventually become your project report for **P02: Exploratory Data Analysis**. Specifically, you will write rmarkdown to report your exploratory data analysis.
-
-* Please see Canvas for more details.
-
-## ACCESSING THE /source DIRECTORY
-### Example 1: Source some code and run a function
-```{r}
-# Example 1: Note relative path, which can be read: Up one
-# directory(..), down into source (/source), and
-# then "source" an R file (data_access.R)
-source("../source/data_access.R")
-data_access_test()
+``` {r summary_info_code, echo = FALSE, include = FALSE}
+source("../source/summary_info.R")
 ```
 
-### Example 2: Initialize a variable and then use it
-```{r}
-# Example 1: This function was "sourced" above
-msg <- data_access_test(" Morgan!")
+## This will be the start of my example:
+
+```{r summary_info_plot, echo = FALSE}
+bh_plot
 ```
 
-> `r msg` Hope you have a good day!!
+### My number is `r num` and im  not a `r word`
 
-## ABOUT THIS FILE:
+The FitnessGram^TM^ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+## Chicago Test Dynamic Paragraph
 
-```{r cars}
-summary(cars)
-```
+There were a total of `r round(chicago_info$total)` dollars spent on police settlements.
 
-## Including Plots
+**Chicago Summary Points:**
 
-You can also embed plots, for example:
+Police misconduct cases involving `r chicago_highest_median_type` had the 
+highest median settlements of $`r chicago_highest_median`.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+The city of Chicago spent a median of $`r chicago_yearly_median` annually on
+police misconduct settlements.
+
+
