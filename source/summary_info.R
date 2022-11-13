@@ -153,6 +153,22 @@ chicago_yearly_median <- prettyNum(chicago_yearly_median,
 
 
 # salma
+read.csv("../data/los_angeles_edited.csv")
+LA_info <-list()
+LA_info$rows <-nrow(`Los Angeles`)
+LA_info$columns <-ncol(`Los Angeles`)
+settlements <-`Los Angeles`$amount_awarded
+LA_info$median <-median(settlements, na.rm = T)
+LA_info$mean <-mean(settlements, na.rm = T)
+LA_info$max <-max(settlements, na.rm = T)
+LA_info$min <-min(settlements, na.rm = T)
+LA_info$range <-range(settlements, na.rm = T)
+LA_info$sd <-sd(settlements, na.rm = T)
+LA_info$
+
+
+
+
 
 
 
