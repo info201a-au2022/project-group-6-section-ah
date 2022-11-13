@@ -167,6 +167,7 @@ LA_info$max <-max(settlements, na.rm = T)
 LA_info$min <-min(settlements, na.rm = T)
 LA_info$range <-range(settlements, na.rm = T)
 LA_info$sd <-sd(settlements, na.rm = T)
+
 #additional
 LA_info$civilrights <-sum(num_civil_rights$amount_awarded, na.rm = F)
 LA_info$gender_discrimination_charges <-nrow(LA_gender_discrimination_charges)
