@@ -1,5 +1,5 @@
 library(ggplot2)
-
+LA <- read.csv("../data/los_angeles_edited.csv")
 settlements <-LA$amount_awarded
 year <-as.Date(LA$calendar_year,format = "%Y") 
 
