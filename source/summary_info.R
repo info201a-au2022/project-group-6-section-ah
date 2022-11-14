@@ -192,31 +192,80 @@ total_settlements <-sum(year_amt$amount_awarded, na.rm = F)
 
 
 
-
-
-
-
-
-
 # paul
 
+nyc <- read.csv("../data/new_york_edited.csv")
+
+View(nyc)
+
+nyc_settlements <- nyc$amount_awarded
+
+nyc_rows <- nrow(nyc)
+nyc_columns <- ncol(nyc)
+nyc_settlement_median <- median(nyc_settlements, na.rm = T)
+nyc_settlement_mean <- mean(nyc_settlements, na.rm = T)
+nyc_settlement_max <- max(nyc_settlements, na.rm = T)
+nyc_settlement_min <- min(nyc_settlements, na.rm = T)
+nyc_settlement_range <- range(nyc_settlements, na.rm = T)
+nyc_settlement_sd <- sd(nyc_settlements, na.rm = T)
+
+nyc_info <- list()
+nyc_info$rows <- nyc_rows
+nyc_info$columns <- nyc_columns
+nyc_info$median <- nyc_settlement_median
+nyc_info$mean <- nyc_settlement_mean
+nyc_info$max <- nyc_settlement_max
+nyc_info$min <- nyc_settlement_min
+nyc_info$range <- nyc_settlement_range
+nyc_info$sd <- nyc_settlement_sd
 
 
+# additional New York City information
 
+# reason for highest settlement
 
+nyc_highest_settlement_reason <- nyc %>% 
+  filter(amount_awarded == max(amount_awarded, na.rm = T)) %>% 
+  pull(summary_allegations)
 
+#reasons for lowest settlements
 
+nyc_lowest_settlement_reasons <- nyc %>% 
+  filter(amount_awarded == min(amount_awarded, na.rm = T)) %>% 
+  pull(summary_allegations)
 
+nyc_info$highest_settlement_reason <- nyc_highest_settlement_reason
+nyc_info$lowest_settlement_reasons <- nyc_lowest_settlement_reasons
 
+# dynamic paragraph info
 
+# promt 1: Of the many different cases within the City police settlement cases, 
+# case reason has been the highest occurring reason for these settlements. Analysis
 
+print(length(nyc$summary_allegations))
 
+unique_summary_allegations <- unique(nyc$summary_allegations)
 
+civil_rights_claims_amount <- str_detect(nyc$summary_allegations,"CIVIL RIGHTS CLAIMS")
 
+peace_officer_police_action_amount <- str_detect(nyc$summary_allegations, "PEACE OFFICER/POLICE ACTION")
 
+peace_officer_police_act_amount <- str_detect(nyc$summary_allegations, "PEACE OFFICER ")
 
+miscellaneous_amount <- str_detect(nyc$summary_allegations, "MISCELLANEOUS")
 
+refund_amount <- str_detect(nyc$summary_allegations, "REFUND")
 
+personal_injury_amount <- str_detect(nyc$summary_allegations, "PERSONAL INJURY")
+
+hybrid_amount <- str_detect(nyc$summary_allegations, "HYBRID")
+
+# the highest reason for settlements in NYC within the past 10 years is peace officer/police acttion (PI)
+
+#prompt 2: City spent a total of dollar amount across 10 years on police misconduct settlements. Analysis
+
+nyc_total_settlement_amount <- sum(nyc$amount_awarded)
+print(nyc_total_settlement_amount)  
 
 
 
