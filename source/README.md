@@ -6,10 +6,10 @@ these sub-directories (TODO: Update/Delete)
 |Source Directories | Brief Description|
 |---------------| -----------------|
 |[Summary Info](./summary_info.R) | Has summary information used in our dynamic paragraph
-|[Summary Table](./summary_table.R) | Description ...
-|[Chart 1](./chart_1.R) | Code for chart 1
-|[Chart 2](./chart_2.R) | Code for chart 2
-|[Chart 3](./chart_3.R) | Code for chart 3
+|[Summary Table](./summary_table.R) | Has code for summary table
+|[Chart 1](./chart_1.R) | Has code for chart 1
+|[Chart 2](./chart_2.R) | Has code for chart 2
+|[Chart 3](./chart_3.R) | Has code for chart 3
 
 
 

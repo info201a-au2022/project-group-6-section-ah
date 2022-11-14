@@ -186,7 +186,9 @@ year_amt <- la %>%
   filter(str_detect(la$calendar_year, "2018"))
 total_settlements <-sum(year_amt$amount_awarded, na.rm = F)
 
-
+la_total_settlements <- prettyNum(total_settlements,
+                                  big.mark = ",", 
+                                  scientific = FALSE) # STAR
 
 
 

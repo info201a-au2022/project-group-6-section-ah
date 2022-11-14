@@ -5,10 +5,11 @@ In our project, we use the following data files and Application Programming Inte
 ## Data files (TODO: Update/delete for your PROJECT)
 |Data File Name | Brief Description|
 |---------------| -----------------|
-|[police_misconduct_registry.cvs](./police_misconduct_registry.csv) | This file contains instances of officers being terminated. (See report for details.)
-|[chicago_edited.csv](./chicago_edited.csv) | This file contains settlements of police misconduct cases in Chicago. (See report for details.)
-|[new_york_edited.csv](./new_york_edited.csv) | This file contains settlements of police misconduct cases in New York City. (See report for details.)
-
+|[police_misconduct_registry.cvs](./police_misconduct_registry.csv) | This file contains instances of officers being terminated.
+|[chicago_edited.csv](./chicago_edited.csv) | This file contains settlements of police misconduct cases in Chicago.
+|[new_york_edited.csv](./new_york_edited.csv) | This file contains settlements of police misconduct cases in New York City.
+|[los_angeles_edited.csv](./los_angeles_edited.csv) | This file contains settlements of police misconduct cases in Los Angeles.
+|[baltimore_edited.csv](./baltimore_edited.csv) | This file contains settlements of police misconduct cases in Baltimore.
 
 ## Application Programming Interfaces (API) (TODO: Update/delete for your PROJECT)
 
