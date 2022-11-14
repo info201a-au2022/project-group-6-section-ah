@@ -200,12 +200,22 @@ View(nyc)
 
 nyc_settlements <- nyc$amount_awarded
 
-
+# All 32,632 cases
 nyc_rows <- nrow(nyc)
+nyc_rows <- prettyNum(nyc_rows,
+                      big.mark = ",", 
+                      scientific = FALSE)
+
 nyc_columns <- ncol(nyc)
 nyc_settlement_median <- median(nyc_settlements, na.rm = T)
 nyc_settlement_mean <- mean(nyc_settlements, na.rm = T)
+
+# The 26,875,657 dollar case
 nyc_settlement_max <- max(nyc_settlements, na.rm = T)
+nyc_settlement_max <- prettyNum(nyc_settlement_max,
+                                big.mark = ",", 
+                                scientific = FALSE)
+
 nyc_settlement_min <- min(nyc_settlements, na.rm = T)
 nyc_settlement_range <- range(nyc_settlements, na.rm = T)
 nyc_settlement_sd <- sd(nyc_settlements, na.rm = T)
@@ -253,7 +263,11 @@ unique_summary_allegations <- unique(nyc$summary_allegations)
 
 civil_rights_claims_amount <- sum(str_detect(nyc$summary_allegations,"CIVIL RIGHTS CLAIMS"))
 
+# The 21,467 cases ------
 peace_officer_police_action_amount <- sum(str_detect(nyc$summary_allegations, "PEACE OFFICER/POLICE ACTION"))
+peace_officer_police_action_amount <- prettyNum(peace_officer_police_action_amount,
+                                                big.mark = ",", 
+                                                scientific = FALSE)
 
 peace_officer_police_act_amount <- sum(str_detect(nyc$summary_allegations, "PEACE OFFICER "))
 
