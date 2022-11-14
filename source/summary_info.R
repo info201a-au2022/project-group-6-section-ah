@@ -200,6 +200,7 @@ View(nyc)
 
 nyc_settlements <- nyc$amount_awarded
 
+
 nyc_rows <- nrow(nyc)
 nyc_columns <- ncol(nyc)
 nyc_settlement_median <- median(nyc_settlements, na.rm = T)
@@ -208,6 +209,10 @@ nyc_settlement_max <- max(nyc_settlements, na.rm = T)
 nyc_settlement_min <- min(nyc_settlements, na.rm = T)
 nyc_settlement_range <- range(nyc_settlements, na.rm = T)
 nyc_settlement_sd <- sd(nyc_settlements, na.rm = T)
+
+print(nyc_settlement_max)
+
+
 
 nyc_info <- list()
 nyc_info$rows <- nyc_rows
@@ -246,19 +251,19 @@ print(length(nyc$summary_allegations))
 
 unique_summary_allegations <- unique(nyc$summary_allegations)
 
-civil_rights_claims_amount <- str_detect(nyc$summary_allegations,"CIVIL RIGHTS CLAIMS")
+civil_rights_claims_amount <- sum(str_detect(nyc$summary_allegations,"CIVIL RIGHTS CLAIMS"))
 
-peace_officer_police_action_amount <- str_detect(nyc$summary_allegations, "PEACE OFFICER/POLICE ACTION")
+peace_officer_police_action_amount <- sum(str_detect(nyc$summary_allegations, "PEACE OFFICER/POLICE ACTION"))
 
-peace_officer_police_act_amount <- str_detect(nyc$summary_allegations, "PEACE OFFICER ")
+peace_officer_police_act_amount <- sum(str_detect(nyc$summary_allegations, "PEACE OFFICER "))
 
-miscellaneous_amount <- str_detect(nyc$summary_allegations, "MISCELLANEOUS")
+miscellaneous_amount <- sum(str_detect(nyc$summary_allegations, "MISCELLANEOUS"))
 
-refund_amount <- str_detect(nyc$summary_allegations, "REFUND")
+refund_amount <- sum(str_detect(nyc$summary_allegations, "REFUND"))
 
-personal_injury_amount <- str_detect(nyc$summary_allegations, "PERSONAL INJURY")
+personal_injury_amount <- sum(str_detect(nyc$summary_allegations, "PERSONAL INJURY"))
 
-hybrid_amount <- str_detect(nyc$summary_allegations, "HYBRID")
+hybrid_amount <- sum(str_detect(nyc$summary_allegations, "HYBRID"))
 
 # the highest reason for settlements in NYC within the past 10 years is peace officer/police acttion (PI)
 
