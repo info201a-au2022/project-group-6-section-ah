@@ -187,7 +187,6 @@ year_amt <- la %>%
 total_settlements <-sum(year_amt$amount_awarded, na.rm = F)
 
 
-v <- 6
 
 
 
