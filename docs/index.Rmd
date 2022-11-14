@@ -58,3 +58,4 @@ LA_set_year
 chichart
 ```
 
+This is a stacked bar chart that visualizes the proportion of settlement money spent on different *types* of police misconduct in Chicago. This is important to observe because we can see which category of misconduct has the highest consequences and settlement amount. We can observe that **reversed conviction** and **serious excessive force** cases pay the highest amount of settlements.
