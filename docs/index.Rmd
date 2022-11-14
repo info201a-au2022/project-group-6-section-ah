@@ -12,6 +12,7 @@ options(scipen=999)
 
 ``` {r summary_info_code, echo = FALSE, include = FALSE}
 source("../source/summary_info.R")
+source("../source/chart_1.R")
 source("../source/chart_2.R")
 ```
 
@@ -39,3 +40,22 @@ The city of Chicago spent a median of $`r chicago_yearly_median` annually on
 police misconduct settlements.
 
 The city of Los Angeles spent a total amount of $`r total_settlements` on police settlements in 2018.
+
+## Charts:
+
+### Salma: 
+
+```{r echo = FALSE}
+a <- ggplot (LA_bar_data, aes(year, settlements), xlab("year"), ylab("settlements"),  
+        xlim=c(2010, 2020 ), ylim(0, 1,000,000)) +
+  geom_bar(stat = "identity", fill = "#FF6666") +
+  scale_x_continuous(breaks= scales::pretty_breaks(), year) +
+scale_x_continuous(breaks= year) +
+  ggtitle("Los Angeles Settlements per Year") 
+```
+
+### Bright: 
+```{r echo = FALSE}
+chichart
+```
+
