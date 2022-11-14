@@ -46,13 +46,12 @@ The city of Los Angeles spent a total amount of $`r total_settlements` on police
 ### Salma: 
 
 ```{r echo = FALSE}
-a <- ggplot (LA_bar_data, aes(year, settlements), xlab("year"), ylab("settlements"),  
-        xlim=c(2010, 2020 ), ylim(0, 1,000,000)) +
-  geom_bar(stat = "identity", fill = "#FF6666") +
-  scale_x_continuous(breaks= scales::pretty_breaks(), year) +
-scale_x_continuous(breaks= year) +
-  ggtitle("Los Angeles Settlements per Year") 
+LA_set_year
 ```
+
+
+
+
 
 ### Bright: 
 ```{r echo = FALSE}

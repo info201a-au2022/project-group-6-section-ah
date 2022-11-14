@@ -59,13 +59,13 @@ chichart <- ggplot(ccc_chart_df3) +
     x = "",
     y = "Settlement Amount in USD",
     title = "Distribution of Settlement Accross Different Police Misconduct Allegations"
-  ) + scale_fill_manual(values = c("#f7e39f","#fecd80",
+  ) + scale_fill_manual(values = c("#695D3A","#fecd80",
                                    "#f7a55e","#f38072",
-                                   "#f28193", "#f292bb","#e3b7d4",
+                                   "#ec2d46", "#f292bb","#e3b7d4",
                                    "#8b8cc1","#95cbe2",
                                    "#a1d9d9", "#98d0ab"))
 
-
+chichart
 
 
 
