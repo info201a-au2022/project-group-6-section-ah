@@ -1,5 +1,5 @@
 library(ggplot2)
-LA <- read.csv("../data/los_angeles_edited.csv")
+
 settlements <-LA$amount_awarded
 year <-as.Date(LA$calendar_year,format = "%Y") 
 
@@ -12,8 +12,6 @@ scale_x_continuous(breaks= year)
 
 
 
-LA_year_bar <-LA_bar_data %>%
-  group_by(LA_bar_data$LA_year, settlements)
 
 
   
