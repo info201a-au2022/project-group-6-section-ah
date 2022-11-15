@@ -23,10 +23,11 @@ baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegat
 baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "OFFICER MISCONDUCT ", "")
 
 
-baltimore_boxplot <- ggplot(baltimore_data, aes(x = as.factor(summary_allegations), y = amount_awarded)) +
+baltimore_boxplot <- ggplot(baltimore_data, aes(x = as.factor(summary_allegations), y = amount_awarded,
+                  fill = factor(summary_allegations))) +
   scale_y_continuous(labels = scales::comma,
                      limits = c(0, 400000)) +
-  geom_boxplot(fill = "#a866ff") +
+  geom_boxplot() +
   labs(x = "Summary Allegations",
        y = "Settlement Amount in USD",
        title = "Spread of Settlement Money Across Cases") +
