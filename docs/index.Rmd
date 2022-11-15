@@ -53,7 +53,7 @@ This is a stacked bar chart that visualizes the proportion of settlement money s
 
 ### Chart 3:
 
-```{r echo = FALSE}
+```{r echo = FALSE, warning = FALSE}
 baltimore_boxplot
 ```
 

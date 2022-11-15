@@ -31,8 +31,10 @@ baltimore_boxplot <- ggplot(baltimore_data, aes(x = as.factor(summary_allegation
   labs(x = "Summary Allegations",
        y = "Settlement Amount in USD",
        title = "Spread of Settlement Money Across Cases") +
-  theme(axis.text = element_text(size = 7))
+  theme(axis.text = element_text(size = 7)) + 
+  theme(axis.text.x = element_blank())
 
+baltimore_boxplot$labels$fill <- "Type of Settlement Allegations"
 baltimore_boxplot
 
 unique_allegations <- unique(baltimore_data$summary_allegations)
