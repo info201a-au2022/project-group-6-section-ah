@@ -12,35 +12,30 @@ options(scipen=999)
 
 ```{r summary_info_code, echo = FALSE, include = FALSE}
 source("../source/summary_info.R")
+source("../source/summary_table.R")
 source("../source/chart_1.R")
 source("../source/chart_2.R")
+source("../source/chart_3.R")
 ```
 
-## This will be the start of my example:
+## Dynamic Paragraph
 
-```{r summary_info_plot, echo = FALSE}
-bh_plot
+Police brutality is a major issue in the United States. Over the past decade, data on police misconduct and settlements have been recorded and collected by FiveThirtyEight and the Marshall Project, showcasing major cities within the United States that have been accumulating money put into these settlements caused by police misconduct cases. 
+We found that in Chicago, police misconduct cases involving `r chicago_highest_median_type` had the highest median settlements of \$`r chicago_highest_median`. Police departments annually spent a significant amount of money on police misconduct settlements cases. In fact, in 2018, Los Angeles spent a total amount of \$`r la_total_settlements` on police settlements, and the city of Chicago paid a median of \$`r chicago_yearly_median` annually for police misconduct settlements. Furthermore, in New York City, the biggest settlement in a single case within the last 10 years was \$`r nyc_settlement_max`. Out of the `r nyc_rows` police misconduct cases in New York City, the majority of those cases, `r peace_officer_police_action_amount`, to be precise, were categorized as “Peace Officer/Police Action.”
+
+
+## Summary Table of Chicago Police Misconduct Cases and Settlements Throughout The Years in USD
+
+
+``` {r echo= FALSE}
+summary_chart3
 ```
 
-### My number is `r num` and im not a `r word`
 
-The FitnessGram^TM^ Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal. [beep] A single lap should be completed each time you hear this sound. [ding] Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.
+We included this table to show how differing types of misconduct cases *also* have differing settlement amounts, across all years from 2010 to 2019. The table has information about the **overall** mean and median, and also **individual** means and medians of certain *types* of cases, for each year.
 
-## Chicago Test Dynamic Paragraph
 
-There were a total of `r round(chicago_info$total)` dollars spent on police settlements.
-
-**Chicago Summary Points:**
-
-Police misconduct cases involving `r chicago_highest_median_type` had the highest median settlements of \$`r chicago_highest_median`.
-
-The city of Chicago spent a median of \$`r chicago_yearly_median` annually on police misconduct settlements.
-
-The city of Los Angeles spent a total amount of \$`r total_settlements` on police settlements in 2018.
-
-## Charts:
-
-### Salma:
+### Chart 1:
 
 ```{r echo = FALSE}
 LA_set_year
@@ -48,7 +43,7 @@ LA_set_year
 
 This is a column chart representing the amount of *settlement* money spent each *year*. The x-axis shows each year included in the data set, and the y-axis shows the total amount of settlements the city of Los Angeles spent each year. I chose to make this chart to show how much money was spent each year due to police misconduct. We can see that there is a significant amount that was spent in 2016 compared to the other years, and 2013 had the least amount of money spent.
 
-### Bright:
+### Chart 2:
 
 ```{r echo = FALSE}
 chichart
@@ -56,6 +51,7 @@ chichart
 
 This is a stacked bar chart that visualizes the proportion of settlement money spent on different *types* of police misconduct in Chicago. This is important to observe because we can see which category of misconduct has the highest consequences and settlement amount. We can observe that **reversed conviction** and **serious excessive force** cases pay the highest amount of settlements.
 
+<<<<<<< HEAD
 ### Paul:
 
 ```{r echo = FALSE}
@@ -63,3 +59,6 @@ baltimore_boxplot
 ```
 
 This is a box plot showing the **spread** of settlement money throughout different categories of cases within the city of Baltimore, Maryland. Within the summary_allegations axis are the different labels for the categories of cases, which go from Gun Trace Task Force officer misconducts, violations of civil rights, false arrests, false imprisonments, illegal searches, malicious prosecutions, and uses of force in order from left to right. The amount_awarded axis shows the settlement money used. Although there are two outliers within the violation of civil rights category, both of which exceed $600,000 and have been excluded from this box plot, this visualization shows that there is a much *greater spread of settlement money* going into the GTTF officer misconduct cases than the other cases. From this, we can figure out which cases produce a ***greater issue*** in police misconduct cases.
+=======
+## Chart 3:
+>>>>>>> ed3d7b22d58643228eaee108702a56057bea425d
