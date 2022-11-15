@@ -14,19 +14,22 @@ print(max)
 
 baltimore_data$summary_allegations <- toupper(baltimore_data$summary_allegations)
 
-baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - FALSE ARREST", "FA")
-baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "VIOLATION OF CIVIL RIGHTS", "CR")
-baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - MALICIOUS PROSECUTION", "MP")
-baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - USE OF FORCE", "OUF")
-baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - ILLEGAL SEARCH", "IS")
-baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - FALSE IMPRISONMENT", "FI")
+baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - FALSE ARREST", "False Arrest")
+baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "VIOLATION OF CIVIL RIGHTS", "Civil Right")
+baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - MALICIOUS PROSECUTION", "Malicious Prosecutions")
+baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - USE OF FORCE", "Use of Force")
+baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - ILLEGAL SEARCH", "Illegal Search")
+baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "POLICE MISCONDUCT - FALSE IMPRISONMENT", "False Imprisonment")
 baltimore_data$summary_allegations <- str_replace(baltimore_data$summary_allegations, "OFFICER MISCONDUCT ", "")
 
 
 baltimore_boxplot <- ggplot(baltimore_data, aes(x = as.factor(summary_allegations), y = amount_awarded)) +
+  scale_y_continuous(labels = scales::comma,
+                     limits = c(0, 400000)) +
   geom_boxplot(fill = "#a866ff") +
-  xlab("summary_allegations") +
-  ylim(0, 400000) +
+  labs(x = "Summary Allegations",
+       y = "Settlement Amount in USD",
+       title = "Spread of Settlement Money Across Cases") +
   theme(axis.text = element_text(size = 7))
 
 baltimore_boxplot
@@ -38,4 +41,3 @@ print(unique_allegations)
 baltimore_boxplot
 
 View(baltimore_data)
-
