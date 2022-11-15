@@ -55,3 +55,11 @@ chichart
 ```
 
 This is a stacked bar chart that visualizes the proportion of settlement money spent on different *types* of police misconduct in Chicago. This is important to observe because we can see which category of misconduct has the highest consequences and settlement amount. We can observe that **reversed conviction** and **serious excessive force** cases pay the highest amount of settlements.
+
+### Paul:
+
+```{r echo = FALSE}
+baltimore_boxplot
+```
+
+This is a box plot showing the **spread** of settlement money throughout different categories of cases within the city of Baltimore, Maryland. Within the summary_allegations axis are the different labels for the categories of cases, which go from Gun Trace Task Force officer misconducts, violations of civil rights, false arrests, false imprisonments, illegal searches, malicious prosecutions, and uses of force in order from left to right. The amount_awarded axis shows the settlement money used. Although there are two outliers within the violation of civil rights category, both of which exceed $600,000 and have been excluded from this box plot, this visualization shows that there is a much *greater spread of settlement money* going into the GTTF officer misconduct cases than the other cases. From this, we can figure out which cases produce a ***greater issue*** in police misconduct cases.
