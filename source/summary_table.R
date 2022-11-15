@@ -66,7 +66,6 @@ C_revcon <- chicago %>%
   summarise("Median Reversed Conviction Case" = median(amount_awarded),
             "Mean Reversed Conviction Case" = mean(amount_awarded))
 
-summary_chart <- left_join(summary_chart, C_DUI, by = "Year")
 summary_chart <- left_join(summary_chart, C_EDMP, by = "Year")
 summary_chart <- left_join(summary_chart, C_EF_Minor, by = "Year")
 summary_chart <- left_join(summary_chart, C_EF_Serious, by = "Year")
