@@ -63,7 +63,7 @@ chart1_main_content <- mainPanel(
 )
 
 chart1_panel <- tabPanel(
-  "Settlement Medians",
+  "Comparing Settlement Medians",
   
   titlePanel("Comparing Settlement Amount Medians of Major Cities Over the Years"),
   
@@ -74,12 +74,23 @@ chart1_panel <- tabPanel(
 
 # chart 2 -------------------------------------------------------------------
 
-chart2_sidebar_content <- sidebarPanel()
-
-chart2_main_content <- mainPanel()
+chart2_sidebar_content <- sidebarPanel(
+  h3("Configurations"),
+  
+  selectInput(
+    inputId = "chart2_city",
+    label = "Select a city to view:",
+    choices = df_ui$city,
+    selected = "Los Angeles"
+  )
+)
+  
+chart2_main_content <- mainPanel(
+  plotlyOutput(outputId = "chart2_plot")
+)
 
 chart2_panel <- tabPanel(
-  "Chart 2",
+  "Settlement Totals Across the Years",
   
   titlePanel("My Page 2"),
   

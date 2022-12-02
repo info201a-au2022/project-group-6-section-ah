@@ -35,7 +35,7 @@ server<- function(input, output) {
       scale_y_continuous(labels = scales::comma) +
       labs(
         x = "Year",
-        y = "Median Settlement Amount",
+        y = "Median Settlement Amount in USD",
         color = "City"
       ) + xlim(input$chart1_years)
     
@@ -45,6 +45,27 @@ server<- function(input, output) {
     
   })
   
-  
+  output$chart2_plot <- renderPlotly({
+    df <- all_cities_df %>% 
+      filter(city == input$chart2_city) %>% 
+      group_by(calendar_year) %>%
+      summarise(amount_awarded = sum(amount_awarded))
+    
+    el_plot <- ggplot(df, aes(
+      x = calendar_year,
+      y = amount_awarded
+    )) + geom_col(fill = "#CC95E0", color = "#CC95E0") +
+      scale_x_continuous(breaks= year) +
+      labs(
+        x = "Year",
+        y = "Total Settlement Amount in USD",
+        title = paste(input$chart2_city, "Distributions")
+      ) + scale_y_continuous(labels = scales::comma)
+    
+    ggplotly(el_plot) 
+    
+    
+  })
   
 }
+
