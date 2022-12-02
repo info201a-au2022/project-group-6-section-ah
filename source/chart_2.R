@@ -45,7 +45,7 @@ chicago_chart2 <- ggplot(ccc_chart_df2) +
 
 ccc_chart_df3 <- chicago %>% 
   mutate(Allegation = str_sub(summary_allegations, 32)) %>% 
-  select(Allegation, amount_awarded) %>% 
+  select(Allegation, amount_awarded, calendar_year) %>% 
   group_by(Allegation) %>% 
   summarise(total_settlements = sum(amount_awarded)) %>% 
   filter(Allegation != "")
@@ -68,35 +68,13 @@ chichart <- ggplot(ccc_chart_df3) +
 
 chichart
 
+casescount <- chicago %>% 
+  select(calendar_year) %>% 
+  count(calendar_year)
 
-
-
-
-
-
-
-
-
-
-
-
-locations <- c("Vietnam", "Vietnam", "Vietnam", "Vietnam", "Vietnam",
-        "USA", "USA", "USA", "USA", "USA",
-        "Antarctica", "Antarctica", "Antarctica","Antarctica","Antarctica", 
-        "Vietnam")
-
-temp <- c(90, 80, 100, 110, 75, 
-        66, 60, 70, 80, 50,
-        26, 20, 10, 5, 15, 87)
-
-df_weather <- data.frame(location = locations, degrees = temp)
-
-weather_plot <- ggplot(df_weather) + geom_boxplot(
-  aes(
-    x = location,
-    y = degrees
-  )
-)
+casescount2 <- casescount %>% 
+  select(n) %>% 
+  summarise(mean = mean(n), median = median(n))
 
 
 
