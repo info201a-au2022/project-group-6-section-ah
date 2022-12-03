@@ -90,7 +90,7 @@ chart2_main_content <- mainPanel(
 
 chart2_panel <- tabPanel(
   "Settlement Totals Across the Years",
-  
+    
   titlePanel("My Page 2"),
   
   chart2_sidebar_content,

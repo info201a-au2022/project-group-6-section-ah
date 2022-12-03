@@ -57,7 +57,7 @@ server<- function(input, output) {
       x = calendar_year,
       y = amount_awarded
     )) + geom_col(fill = "#CC95E0", color = "#CC95E0") +
-      scale_x_continuous(breaks= year) +
+      scale_x_continuous(breaks = df$calendar_year) +
       labs(
         x = "Year",
         y = "Total Settlement Amount in USD",
@@ -71,10 +71,41 @@ server<- function(input, output) {
  
 # chart 3 ---------------------------------------------------------------
   output$chart3_plot <- renderPlotly({
+    if (input$calculation == "Median") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(median(x, na.rm = TRUE))
+      }
+    }
+      
+    if (input$calculation == "Mean") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(mean(x, na.rm = TRUE))
+      }
+    }
+    
+    if (input$calculation == "Range") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(range(x, na.rm = TRUE))
+      }
+    }
+    
+    if (input$calculation == "Max") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(max(x, na.rm = TRUE))
+      }
+    }
+    
+    if (input$calculation == "Min") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(min(x, na.rm = TRUE))
+      }
+    }
+    
+    
     chart3_df <- all_cities_df %>% 
       filter(city == input$chart3_city) %>% 
       group_by(calendar_year) %>% 
-      summarize(amount_awarded = input$calculation(amount_awarded, na.rm = TRUE))
+      summarize(amount_awarded = calculate(amount_awarded, na.rm = TRUE))
     
     scatter_plot <- ggplot(data = chart3_df, aes(x = calendar_year, y = amount_awarded, color = input$colors)) +
       geom_point(size = input$sizes) +
@@ -85,7 +116,9 @@ server<- function(input, output) {
         x = "Year",
         y = "Settlement Amount",
         caption = "") 
-    return(scatter_plot)
+    scatter_plot
   })
 }
+
+
 
