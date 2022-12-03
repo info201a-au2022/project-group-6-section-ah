@@ -7,6 +7,8 @@ library(plotly)
 df_ui <- read.csv("all_cities.csv") %>% 
   select(city) %>% 
   unique()
+
+View(df_ui)
 # intro ---------------------------------------------------------------------
 
 intro_main_content <- mainPanel()
@@ -98,8 +100,7 @@ chart2_panel <- tabPanel(
   chart2_main_content
 )
 
-# chart 3 -------------------------------------------------------------------
-
+# chart 3 ------------------------------------------------------------------
 chart3_sidebar_content <- sidebarPanel(
   h3("Configurations"),
   
@@ -108,13 +109,6 @@ chart3_sidebar_content <- sidebarPanel(
     label = "Select a city to view:",
     choices = df_ui$city,
     selected = "Los Angeles"
-  ),
-  
-  selectInput(
-    inputId = "calculation",
-    label = "Select a calculation to view:",
-    choices = c("Median", "Mean", "Range", "Max", "Min"),
-    selected = "Mean"
   ),
   
   sliderInput(
@@ -129,13 +123,6 @@ chart3_sidebar_content <- sidebarPanel(
   size_input <- sliderInput(
     "sizes",
     label = "Size of point", min = 1, max = 10, value = 5
-  ),
-  
-  radioButtons(
-    inputId = "colors",
-    label = "Select a color for the scatter plot",
-    choices = c("Pink", "Blue", "Green", "Red", "Yellow"),
-    selected = "Pink"
   )
 )
 
@@ -144,7 +131,7 @@ chart3_main_content <- mainPanel(
 )
 
 chart3_panel <- tabPanel(
-  "Chart 3",
+  "Settlement Totals Across the Years",
   
   titlePanel("My Page 3"),
   
@@ -152,6 +139,60 @@ chart3_panel <- tabPanel(
   
   chart3_main_content
 )
+# chart 4 -------------------------------------------------------------------
+
+#chart4_sidebar_content <- sidebarPanel(
+#  h3("Configurations"),
+#  
+#  selectInput(
+#    inputId = "chart4_city",
+#    label = "Select a city to view:",
+#    choices = df_ui$city,
+#    selected = "Los Angeles"
+#  ),
+#  
+#  selectInput(
+#    inputId = "calculation",
+#    label = "Select a calculation to view:",
+#    choices = c("Median", "Mean", "Range", "Max", "Min"),
+#    selected = "Mean"
+#  ),
+#  
+#  sliderInput(
+#    inputId = "chart4_years",
+#    label = "Selected Years",
+#    min = 2005,
+#    max = 2020,
+#    value = c(2009, 2020),
+#    sep = ""
+#  ),
+#  
+#  size_input <- sliderInput(
+#    "sizes",
+#    label = "Size of point", min = 1, max = 10, value = 5
+#  ),
+#  
+#  radioButtons(
+#    inputId = "colors",
+#    label = "Select a color for the scatter plot",
+#    choices = c("Pink", "Blue", "Green", "Red", "Yellow"),
+#    selected = "Pink"
+#  )
+#)
+#
+#chart4_main_content <- mainPanel(
+#  plotlyOutput(outputId = "chart4_plot")
+#)
+#
+#chart4_panel <- tabPanel(
+#  "Chart 4",
+#  
+#  titlePanel("My Page 4"),
+#  
+#  chart4_sidebar_content,
+#  
+#  chart4_main_content
+#)
 
 # summary -------------------------------------------------------------------
 
