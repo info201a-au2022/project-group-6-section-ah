@@ -57,7 +57,7 @@ server<- function(input, output) {
       x = calendar_year,
       y = amount_awarded
     )) + geom_col(fill = "#CC95E0", color = "#CC95E0") +
-      scale_x_continuous(breaks= year) +
+      scale_x_continuous(breaks = df$calendar_year) +
       labs(
         x = "Year",
         y = "Total Settlement Amount in USD",
@@ -76,7 +76,11 @@ server<- function(input, output) {
         return(median(x, na.rm = TRUE))
       }
     }
+<<<<<<< HEAD
     
+=======
+      
+>>>>>>> c45f471d97bcdee5d70d1d75b7c8e6486eb51246
     if (input$calculation == "Mean") {
       calculate <- function(x, na.rm = TRUE) {
         return(mean(x, na.rm = TRUE))
@@ -118,4 +122,11 @@ server<- function(input, output) {
         caption = "") 
     scatter_plot
   })
+<<<<<<< HEAD
 }
+=======
+}
+
+
+
+>>>>>>> c45f471d97bcdee5d70d1d75b7c8e6486eb51246
