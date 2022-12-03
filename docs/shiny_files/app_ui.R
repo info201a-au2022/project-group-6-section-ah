@@ -7,7 +7,6 @@ library(plotly)
 df_ui <- read.csv("all_cities.csv") %>% 
   select(city) %>% 
   unique()
-
 # intro ---------------------------------------------------------------------
 
 intro_main_content <- mainPanel()
@@ -101,9 +100,48 @@ chart2_panel <- tabPanel(
 
 # chart 3 -------------------------------------------------------------------
 
-chart3_sidebar_content <- sidebarPanel()
+chart3_sidebar_content <- sidebarPanel(
+  h3("Configurations"),
+  
+  selectInput(
+    inputId = "chart3_city",
+    label = "Select a city to view:",
+    choices = df_ui$city,
+    selected = "Los Angeles"
+  ),
+  
+  selectInput(
+    inputId = "calculation",
+    label = "Select a calculation to view:",
+    choices = c("Median", "Mean", "Range", "Max", "Min"),
+    selected = "Mean"
+  ),
+  
+  sliderInput(
+    inputId = "chart3_years",
+    label = "Selected Years",
+    min = 2005,
+    max = 2020,
+    value = c(2009, 2020),
+    sep = ""
+  ),
+  
+  size_input <- sliderInput(
+    "sizes",
+    label = "Size of point", min = 1, max = 10, value = 5
+  ),
+  
+  radioButtons(
+    inputId = "colors",
+    label = "Select a color for the scatter plot",
+    choices = c("Pink", "Blue", "Green", "Red", "Yellow"),
+    selected = "Pink"
+  )
+)
 
-chart3_main_content <- mainPanel()
+chart3_main_content <- mainPanel(
+  plotlyOutput(outputId = "chart3_plot")
+)
 
 chart3_panel <- tabPanel(
   "Chart 3",

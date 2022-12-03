@@ -5,7 +5,8 @@ library(plotly)
 all_cities_df <- read.csv("all_cities.csv") %>% 
   select(-X)
 
-
+?factor
+# chart 1 ---------------------------------------------------------------
 server<- function(input, output) {
   output$chart1_plot <- renderPlotly({
     total <- all_cities_df %>% 
@@ -45,6 +46,7 @@ server<- function(input, output) {
     
   })
   
+# chart 2 ---------------------------------------------------------------
   output$chart2_plot <- renderPlotly({
     df <- all_cities_df %>% 
       filter(city == input$chart2_city) %>% 
@@ -66,6 +68,24 @@ server<- function(input, output) {
     
     
   })
-  
+ 
+# chart 3 ---------------------------------------------------------------
+  output$chart3_plot <- renderPlotly({
+    chart3_df <- all_cities_df %>% 
+      filter(city == input$chart3_city) %>% 
+      group_by(calendar_year) %>% 
+      summarize(amount_awarded = input$calculation(amount_awarded, na.rm = TRUE))
+    
+    scatter_plot <- ggplot(data = chart3_df, aes(x = calendar_year, y = amount_awarded, color = input$colors)) +
+      geom_point(size = input$sizes) +
+      scale_y_continuous(labels = scales::comma) +
+      xlim(input$chart1_years) +
+      ggtitle("") +
+      labs(
+        x = "Year",
+        y = "Settlement Amount",
+        caption = "") 
+    return(scatter_plot)
+  })
 }
 
