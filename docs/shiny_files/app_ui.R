@@ -27,6 +27,13 @@ chart1_sidebar_content <- sidebarPanel(
   h3("Configurations"),
   
   selectInput(
+    inputId = "calculation",
+    label = "Select a calculation to view:",
+    choices = c("Median", "Mean", "Max", "Min"),
+    selected = "Median"
+  ),
+  
+  selectInput(
     inputId = "chart1_city1",
     label = "Select cities to compare:",
     choices = df_ui$city,

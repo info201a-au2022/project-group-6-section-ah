@@ -8,29 +8,70 @@ all_cities_df <- read.csv("all_cities.csv") %>%
 # chart 1 ---------------------------------------------------------------
 server<- function(input, output) {
   output$chart1_plot <- renderPlotly({
+    
+    if (input$calculation == "Median") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(median(x, na.rm = TRUE))
+      }
+    }
+    
+    if(input$calculation == "Median"){
+      calculation_label <- "Total Median"
+    }
+    
+    if (input$calculation == "Mean") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(mean(x, na.rm = TRUE))
+      }
+    }
+    
+    if(input$calculation == "Mean"){
+      calculation_label <- "Total Mean"
+    }
+    
+    if (input$calculation == "Max") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(max(x, na.rm = TRUE))
+      }
+    }
+    
+    if(input$calculation == "Max"){
+      calculation_label <- "Total Max"
+    }
+    
+    if (input$calculation == "Min") {
+      calculate <- function(x, na.rm = TRUE) {
+        return(min(x, na.rm = TRUE))
+      }
+    }
+    
+    if(input$calculation == "Min"){
+      calculation_label <- "Total Min"
+    }
+    
     total <- all_cities_df %>% 
       group_by(calendar_year) %>% 
-      summarise(amount_awarded_median = median(amount_awarded, na.rm = TRUE)) %>% 
+      summarise(amount_awarded_calculation = calculate(amount_awarded, na.rm = TRUE)) %>% 
       filter(calendar_year < 3000) %>% 
-      mutate(city = "Total Median")
-    
+      mutate(city = calculation_label)
+        
     cities <- all_cities_df %>% 
       filter(city == input$chart1_city1 | city == input$chart1_city2 |
                city == input$chart1_city3) %>% 
       group_by(calendar_year, city) %>% 
-      summarise(amount_awarded_median = median(amount_awarded, na.rm = TRUE))%>% 
+      summarise(amount_awarded_calculation = calculate(amount_awarded, na.rm = TRUE))%>% 
       filter(calendar_year < 3000)
     
     total_df <- rbind(total, cities)
   
-    total_df$city <- factor(total_df$city, levels = c("Total Median", 
+    total_df$city <- factor(total_df$city, levels = c(calculation_label, 
                                                       input$chart1_city1,
                                                       input$chart1_city2,
                                                       input$chart1_city3))
     
     the_plot <- ggplot(total_df, aes(
       x = calendar_year,
-      y = amount_awarded_median
+      y = amount_awarded_calculation
     )) + geom_line(aes(color = city)) + 
       scale_y_continuous(labels = scales::comma) +
       labs(
@@ -77,7 +118,7 @@ server<- function(input, output) {
       summarize(amount_of_cases = length(amount_awarded))
     
     scatter_plot <- ggplot(data = amount_df, aes(x = calendar_year, y = amount_of_cases)) +
-      geom_point(size = input$sizes) +
+      geom_point(size = input$sizes, color = "#6FABF9") +
       scale_y_continuous(labels = scales::comma) +
       xlim(input$chart3_years) +
       ggtitle("") +
@@ -89,55 +130,5 @@ server<- function(input, output) {
     scatter_plot
   })
   
-# chart to join with chart 1 ---------------------------------------------------------------
-#  output$chart4_plot <- renderPlotly({
-#    if (input$calculation == "Median") {
-#      calculate <- function(x, na.rm = TRUE) {
-#        return(median(x, na.rm = TRUE))
-#      }
-#    }
-#
-#
-#    if (input$calculation == "Mean") {
-#      calculate <- function(x, na.rm = TRUE) {
-#        return(mean(x, na.rm = TRUE))
-#      }
-#    }
-#    
-#    if (input$calculation == "Range") {
-#      calculate <- function(x, na.rm = TRUE) {
-#        return(range(x, na.rm = TRUE))
-#      }
-#    }
-#    
-#    if (input$calculation == "Max") {
-#      calculate <- function(x, na.rm = TRUE) {
-#        return(max(x, na.rm = TRUE))
-#      }
-#    }
-#    
-#    if (input$calculation == "Min") {
-#      calculate <- function(x, na.rm = TRUE) {
-#        return(min(x, na.rm = TRUE))
-#      }
-#    }
-#    
-#    
-#    chart4_df <- all_cities_df %>% 
-#      filter(city == input$chart4_city) %>% 
-#      group_by(calendar_year) %>% 
-#      summarize(amount_awarded = calculate(amount_awarded, na.rm = TRUE))
-#    
-#    scatter_plot <- ggplot(data = chart4_df, aes(x = calendar_year, y = amount_awarded, color = input$colors)) +
-#      geom_point(size = input$sizes) +
-#      scale_y_continuous(labels = scales::comma) +
-#      xlim(input$chart4_years) +
-#      ggtitle("") +
-#      labs(
-#        x = "Year",
-#        y = "Settlement Amount",
-#        caption = "") 
-#    scatter_plot
-#  })
 }
 
