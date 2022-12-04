@@ -111,10 +111,10 @@ server<- function(input, output) {
 #    }
 #    
 #    if (input$calculation == "Max") {
-      calculate <- function(x, na.rm = TRUE) {
-        return(max(x, na.rm = TRUE))
-      }
-    }
+#      calculate <- function(x, na.rm = TRUE) {
+#        return(max(x, na.rm = TRUE))
+#      }
+#    }
 #    
 #    if (input$calculation == "Min") {
 #      calculate <- function(x, na.rm = TRUE) {
