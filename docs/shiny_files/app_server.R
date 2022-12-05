@@ -5,6 +5,16 @@ library(plotly)
 all_cities_df <- read.csv("all_cities.csv") %>% 
   select(-X)
 
+chicago <- read.csv("chicago_edited.csv")
+
+chicago_cases <- chicago %>% 
+  mutate(type = str_sub(summary_allegations, 32)) %>%
+  select(calendar_year, amount_awarded, type) %>% 
+  filter(type != "") %>% 
+  filter(type != "Other Police Misconduct:Intentional") %>% 
+  filter(type != "Other Police Misconduct:Non-Intentional") %>% 
+  filter(type != "Other Police Misconduct")
+
 # chart 1 ---------------------------------------------------------------
 server<- function(input, output) {
   output$chart1_plot <- renderPlotly({
@@ -88,22 +98,34 @@ server<- function(input, output) {
   
   # chart 2 ---------------------------------------------------------------
   output$chart2_plot <- renderPlotly({
+    
+    if (input$chart2_select == "Amount of Settlements") {
+      df <- all_cities_df %>% 
+        filter(city == input$chart2_city | city == input$chart2_city2 |
+                 city == input$chart2_city3) %>% 
+        group_by(calendar_year, city) %>% 
+        summarise(n = sum(amount_awarded))
+    }
+    
+    if (input$chart2_select == "Number of Cases") {
     df <- all_cities_df %>% 
       filter(city == input$chart2_city | city == input$chart2_city2 |
                city == input$chart2_city3) %>% 
-      group_by(calendar_year, city) %>%
-      summarise(amount_awarded = sum(amount_awarded))
+      group_by(calendar_year, city) %>% 
+      count()
+    }
+    
     
     el_plot <- ggplot(df, aes(
       x = calendar_year,
-      y = amount_awarded,
+      y = n,
       fill = city
     )) + geom_col(position = "dodge") +
       scale_x_continuous(breaks = df$calendar_year) +
       labs(
         x = "Year",
-        y = "Total Settlement Amount in USD",
-        title = paste(input$chart2_city, "Distributions")
+        y = input$chart2_select,
+        title = ("Distributions")
       ) + scale_y_continuous(labels = scales::comma)
     
     ggplotly(el_plot) 
@@ -112,8 +134,8 @@ server<- function(input, output) {
   })
   
   
-  # chart 3 ---------------------------------------------------------------
-  output$chart3_plot <- renderPlotly({
+  # chart 3 old -------------------------------------------------------------
+  output$chart6_plot <- renderPlotly({
     amount_df <- all_cities_df %>% 
       filter(city == input$chart3_city) %>% 
       group_by(calendar_year) %>% 
@@ -133,6 +155,61 @@ server<- function(input, output) {
     scatter_plot
   })
   
+  # chart 3 -----------------------------------------------------------------
+
+  output$chart3_plot <- renderPlotly({
+    
+    if (input$chart3_year != "All") {
+      chicago_cases <- chicago_cases %>% 
+        filter(calendar_year == input$chart3_year)
+    }
+    
+    if (input$chart3_select == "Settlement Amount") {
+      chicago_cases <- chicago_cases %>%
+        group_by(type) %>% 
+        summarise(n = sum(amount_awarded, na.rm = TRUE))
+    }
+    
+    if (input$chart3_select == "Number of Cases") {
+    chicago_cases <- chicago_cases %>%
+      group_by(type) %>% 
+      count()
+    }
+    
+    xd <- ggplot(chicago_cases, aes(
+      x = type,
+      y = n,
+      fill = type)) +
+      geom_col() +
+      labs(
+        x = "Misconduct Category",
+        y = input$chart3_select,
+        fill = "Misconduct Category Legend"
+      ) +
+      theme(axis.text.x = element_blank()) +
+      scale_y_continuous(labels = scales::comma)
+    ggplotly(xd)
+  })
+  
+  
+  # report table for dataset ------------------------------------------------
+  
+  output$datasetreport <- renderTable({
+    tab <- matrix(c(7, 5, 14, 19, 3, 2, 17, 6, 12), ncol=3, byrow=TRUE)
+    colnames(tab) <- c('colName1','colName2','colName3')
+    rownames(tab) <- c('rowName1','rowName2','rowName3')
+    tab <- as.table(tab)
+    tab
+    
+  })
+  
+  
 }
 
+# test code ----
 
+df <- all_cities_df %>% 
+  filter(city == "Los Angeles" | city == "Memphis" |
+           city == "Chicago") %>% 
+  group_by(calendar_year, city) %>%
+  count()
