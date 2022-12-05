@@ -54,7 +54,7 @@ server<- function(input, output) {
       summarise(amount_awarded_calculation = calculate(amount_awarded, na.rm = TRUE)) %>% 
       filter(calendar_year < 3000) %>% 
       mutate(city = calculation_label)
-        
+    
     cities <- all_cities_df %>% 
       filter(city == input$chart1_city1 | city == input$chart1_city2 |
                city == input$chart1_city3) %>% 
@@ -63,7 +63,7 @@ server<- function(input, output) {
       filter(calendar_year < 3000)
     
     total_df <- rbind(total, cities)
-  
+    
     total_df$city <- factor(total_df$city, levels = c(calculation_label, 
                                                       input$chart1_city1,
                                                       input$chart1_city2,
@@ -76,7 +76,7 @@ server<- function(input, output) {
       scale_y_continuous(labels = scales::comma) +
       labs(
         x = "Year",
-        y = "Median Settlement Amount in USD",
+        y = paste(input$calculation, "Settlement Amount in USD"),
         color = "City"
       ) + xlim(input$chart1_years)
     
@@ -86,17 +86,19 @@ server<- function(input, output) {
     
   })
   
-# chart 2 ---------------------------------------------------------------
+  # chart 2 ---------------------------------------------------------------
   output$chart2_plot <- renderPlotly({
     df <- all_cities_df %>% 
-      filter(city == input$chart2_city) %>% 
-      group_by(calendar_year) %>%
+      filter(city == input$chart2_city | city == input$chart2_city2 |
+               city == input$chart2_city3) %>% 
+      group_by(calendar_year, city) %>%
       summarise(amount_awarded = sum(amount_awarded))
     
     el_plot <- ggplot(df, aes(
       x = calendar_year,
-      y = amount_awarded
-    )) + geom_col(fill = "#CC95E0", color = "#CC95E0") +
+      y = amount_awarded,
+      fill = city
+    )) + geom_col(position = "dodge") +
       scale_x_continuous(breaks = df$calendar_year) +
       labs(
         x = "Year",
@@ -108,9 +110,9 @@ server<- function(input, output) {
     
     
   })
- 
   
-# chart 3 ---------------------------------------------------------------
+  
+  # chart 3 ---------------------------------------------------------------
   output$chart3_plot <- renderPlotly({
     amount_df <- all_cities_df %>% 
       filter(city == input$chart3_city) %>% 
@@ -125,10 +127,12 @@ server<- function(input, output) {
       labs(
         x = "Year",
         y = "Amount of Cases",
+        color = "City",
         caption = "")
     
     scatter_plot
   })
   
 }
+
 
