@@ -1,0 +1,13 @@
+name: shiny_files
+title: shiny_files
+username:
+account: brightuw
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 7819564
+bundleId: 6595224
+url: https://brightuw.shinyapps.io/shiny_files/
+when: 1670266478.84207
+lastSyncTime: 1670266478.8421
+asMultiple: FALSE
+asStatic: FALSE

@@ -99,7 +99,7 @@ server<- function(input, output) {
   # chart 2 ---------------------------------------------------------------
   output$chart2_plot <- renderPlotly({
     
-    if (input$chart2_select == "Amount of Settlements") {
+    if (input$chart2_select == "Settlement Amount") {
       df <- all_cities_df %>% 
         filter(city == input$chart2_city | city == input$chart2_city2 |
                  city == input$chart2_city3) %>% 
@@ -108,11 +108,11 @@ server<- function(input, output) {
     }
     
     if (input$chart2_select == "Number of Cases") {
-    df <- all_cities_df %>% 
-      filter(city == input$chart2_city | city == input$chart2_city2 |
-               city == input$chart2_city3) %>% 
-      group_by(calendar_year, city) %>% 
-      count()
+      df <- all_cities_df %>% 
+        filter(city == input$chart2_city | city == input$chart2_city2 |
+                 city == input$chart2_city3) %>% 
+        group_by(calendar_year, city) %>% 
+        count()
     }
     
     
@@ -156,7 +156,7 @@ server<- function(input, output) {
   })
   
   # chart 3 -----------------------------------------------------------------
-
+  
   output$chart3_plot <- renderPlotly({
     
     if (input$chart3_year != "All") {
@@ -171,9 +171,9 @@ server<- function(input, output) {
     }
     
     if (input$chart3_select == "Number of Cases") {
-    chicago_cases <- chicago_cases %>%
-      group_by(type) %>% 
-      count()
+      chicago_cases <- chicago_cases %>%
+        group_by(type) %>% 
+        count()
     }
     
     xd <- ggplot(chicago_cases, aes(
