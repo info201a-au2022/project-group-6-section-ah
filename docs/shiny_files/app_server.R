@@ -99,7 +99,7 @@ server<- function(input, output) {
   # chart 2 ---------------------------------------------------------------
   output$chart2_plot <- renderPlotly({
     
-    if (input$chart2_select == "Amount of Settlements") {
+    if (input$chart2_select == "Settlement Amount") {
       df <- all_cities_df %>% 
         filter(city == input$chart2_city | city == input$chart2_city2 |
                  city == input$chart2_city3) %>% 

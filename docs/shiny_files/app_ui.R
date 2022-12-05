@@ -204,139 +204,57 @@ chart3_panel <- tabPanel(
   chart3_main_content)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# old chart 3 -----------------------------------------
-
-# chart3_sidebar_content <- sidebarPanel(
-#   h3("Configurations"),
-#   
-#   selectInput(
-#     inputId = "chart3_city",
-#     label = "Select a city to view:",
-#     choices = df_ui$city,
-#     selected = "Los Angeles"
-#   ),
-#   
-#   sliderInput(
-#     inputId = "chart3_years",
-#     label = "Selected Years",
-#     min = 2005,
-#     max = 2020,
-#     value = c(2009, 2020),
-#     sep = ""
-#   ),
-#   
-#   size_input <- sliderInput(
-#     "sizes",
-#     label = "Size of point", min = 1, max = 10, value = 5
-#   )
-# )
-# 
-# chart3_main_content <- mainPanel(
-#   plotlyOutput(outputId = "chart3_plot")
-# )
-# 
-# chart3_panel <- tabPanel(
-#   "Cases Across the Years",
-#   
-#   titlePanel("Amount of Police Misconduct Cases Across the Years"),
-#   
-#   chart3_sidebar_content,
-#   
-#   chart3_main_content
-# )
-# chart 4 -------------------------------------------------------------------
-
-#chart4_sidebar_content <- sidebarPanel(
-#  h3("Configurations"),
-#  
-#  selectInput(
-#    inputId = "chart4_city",
-#    label = "Select a city to view:",
-#    choices = df_ui$city,
-#    selected = "Los Angeles"
-#  ),
-#  
-#  selectInput(
-#    inputId = "calculation",
-#    label = "Select a calculation to view:",
-#    choices = c("Median", "Mean", "Range", "Max", "Min"),
-#    selected = "Mean"
-#  ),
-#  
-#  sliderInput(
-#    inputId = "chart4_years",
-#    label = "Selected Years",
-#    min = 2005,
-#    max = 2020,
-#    value = c(2009, 2020),
-#    sep = ""
-#  ),
-#  
-#  size_input <- sliderInput(
-#    "sizes",
-#    label = "Size of point", min = 1, max = 10, value = 5
-#  ),
-#  
-#  radioButtons(
-#    inputId = "colors",
-#    label = "Select a color for the scatter plot",
-#    choices = c("Pink", "Blue", "Green", "Red", "Yellow"),
-#    selected = "Pink"
-#  )
-#)
-#
-#chart4_main_content <- mainPanel(
-#  plotlyOutput(outputId = "chart4_plot")
-#)
-#
-#chart4_panel <- tabPanel(
-#  "Chart 4",
-#  
-#  titlePanel("My Page 4"),
-#  
-#  chart4_sidebar_content,
-#  
-#  chart4_main_content
-#)
-
 # summary -------------------------------------------------------------------
 
-summary_main_content <- mainPanel()
+summary_main_content <- mainPanel(
+  h1("Important Findings within the Charts"),
+  
+  h2("Mean/Median Settlement Amounts Between Cities"),
+  
+  p("Comparing and contrasting multiple citys' mean and median settlement
+    amounts over the years proves to be really useful in seeing stark differences.
+    For example, we can see from Springfield or Milwaukee's data that there are
+    immense spikes within settlement medians and means from time to time. When
+    researching the amount of settlement money that goes into police misconduct,
+    results seem to vary a lot depending on the city, which leaves a greater
+    emphasis on studying the cities that have these spikes.
+    However, one pattern emerging from this data is that the amount of settlement
+    money going into police misconduct cases have been steadily increasing across
+    most states within the past few years. From this, we can speculate that more
+    people have been coming out with police misconduct cases, or the severity of
+    newer cases have been higher."),
+  
+  h2("Total Settlement Amounts over the Years"),
+  
+  p("The biggest takeaway from looking at the ", strong("total"), " settlement
+    amounts within U.S. cities is seeing how much money a city puts into
+    police misconduct cases and what it means for the city's total amount of cases.
+    Despite the spikes and outliars within the median/mean graph, many cities
+    will not differ from others when it comes to the mean and median amount of 
+    police misconduct cases. Instead, the difference of case amounts is clearly
+    seen from this graph, where cities like Cleveland slightly outnumbers most
+    states. Then, Chicago is seen with greater numbers than Cleveland, and finally,
+    New York City towers over every other city when it comes to case amounts,
+    resulting in higher total settlement amounts. This pattern is seen and can be
+    applicable to all cities."),
+  
+  h2("Misconduct Types over the Years"),
+  
+  p("When looking at the number of cases and the distribution of settlement money
+  across different types of police misconduct cases, the biggest takeaway is that
+    false arrests are by far the highest reason for police misconduct cases to
+    occurr. Consistently, false arrests have been the highest reason for them,
+    and yet it is also consistently not the reason for the highest settlement money.
+    Instead, that goes to cases that have to do with Reversed Convictions
+    or Serious Excessive Force. The severity of each case is essential when
+    considering the amount of money that goes into the settlements, however,
+    something should be done to lower the amount of false arrests as well.")
+)
 
 summary_panel <- tabPanel(
   "Summary",
   
-  titlePanel("My summary takeaways"),
+  titlePanel("Summary Takeaways"),
   
   summary_main_content
 )
