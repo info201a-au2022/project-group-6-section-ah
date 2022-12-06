@@ -5,9 +5,9 @@ account: brightuw
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 7819564
-bundleId: 6597986
+bundleId: 6598002
 url: https://brightuw.shinyapps.io/shiny_files/
-when: 1670311271.29015
-lastSyncTime: 1670311271.29016
+when: 1670311667.52063
+lastSyncTime: 1670311667.52064
 asMultiple: FALSE
 asStatic: FALSE

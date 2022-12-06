@@ -268,7 +268,7 @@ report_main_content <- mainPanel(
   p(strong("Authors: Bright Hoang | Paul Oh | Salma Yusuf")),
   
   p(em("Keywords: Police Misconduct / Police Reform / Civil Court Settlement 
-       / Police Reform")),
+       / Police Settlements")),
   
   h2("Abstract"),
   

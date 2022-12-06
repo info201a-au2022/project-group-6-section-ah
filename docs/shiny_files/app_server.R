@@ -207,7 +207,7 @@ server<- function(input, output) {
                                  Columns = colx,
                                  Rows = rowx)
     
-    table <- setDT(tabledfdataset)
+    table <- setDT(dataset)
     table
     
   })
