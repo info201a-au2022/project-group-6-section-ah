@@ -207,7 +207,6 @@ chart3_panel <- tabPanel(
 # summary -------------------------------------------------------------------
 
 summary_main_content <- mainPanel(
-  h1("Important Findings within the Charts"),
   
   h2("Mean/Median Settlement Amounts Between Cities"),
   
@@ -252,9 +251,9 @@ summary_main_content <- mainPanel(
 )
 
 summary_panel <- tabPanel(
-  "Summary",
+  "Summary Takeaways",
   
-  titlePanel("Summary Takeaways"),
+  titlePanel("Important Findings within the Charts"),
   
   summary_main_content
 )
@@ -396,7 +395,181 @@ report_main_content <- mainPanel(
   
   tableOutput("datasetreport"),
   
+  p(strong("a."), "The datasets were created by Amelia Thomson-DeVeaux, 
+    Laura Bronner, and Damini Sharma. Published on 2/22/22, the datasets go in
+    depth about the increase of police settlements for misconduct within the last
+    few years. It explores why that could be possible by acknowledging different
+    possibilities that are all worth thinking about, such as “are police
+    misconduct cases happening more?” and “are people coming out with police
+    misconduct stories to cause the increase in settlements?”"),
   
+  p(strong("b."),"The sources were funded by the Marshall Project, which is a 
+    nonprofit organization in the U.S. that focuses on the criminal justice 
+    system. Here, the data benefits not only those who want to know more about 
+    police misconduct and its settlements, but also communities that have been 
+    affected by police misconduct. This sort of transparency is important
+    for those affected by police misconduct, as it shows the real weight of 
+    the issue."),
+  
+  p(strong("c."), "The sources took its data from city governments themselves. 
+    The authors asked city governments for data, and only some agreed to
+    do so. Although this limits the sources’ findings, as not all cities
+    are included in the dataset, it is definitely credible and trustworthy."),
+    
+  p(strong("d."), "The datasets were found on the dataset website, 
+    “FiveThirtyEight.” We find all of our sources to be useful in our research, 
+    as the content is valuable and important to create a conversation around 
+    police misconduct and its abusive behaviors. All our sources are
+    listed below."),
+  
+  
+  h2("Findings"),
+  
+  p("In this project, we had four different research questions in mind that we
+  wanted to find answers to help better understand the impact police misconduct
+  has on the United States."),
+  
+  p("The first question was “What is the typical occurrence/frequency of 
+    police misconduct in the US?”. One occurrence/frequency that stood out was
+    how a year with just one misconduct case’s settlement amount could be so 
+    high that it would be greater than other years that have many police
+    misconduct cases. This is because some cases are a lot more serious than 
+    others and require a lot more settlement money. Also, the cases with the
+    highest settlements in most cities are excessive force and false arrest
+    allegations. "),
+  
+  p("The second research question was “What kinds of cases are usually involved
+    with police misconduct?”. A lot of cases that are usually involved police
+    misconduct are civil rights violations, illegal searches, excessive force,
+    and false arrests. These cases often have pretty high settlement amounts 
+    and greater consequences for the officers involved since they are taken
+    more seriously and have a big impact on the victims and their families."),
+  
+  p("The third research question was “What are some results of police 
+  misconduct cases?”. Police misconduct cases are usually a long fight. There
+  are many steps such as an investigation, multiple court hearings, and
+  meetings with attorneys. And even then not all cases make it all the way to
+  get settlement amounts. But the cases that do make it, get settlement money 
+  and justice. Depending on the allegation of the misconduct the police 
+  officer(s) involved may get their license revoked or suspended. The 
+  settlement amount also depends on how serious the case is. For example, 
+  if someone were seriously injured or falsely imprisoned for a large amount
+  of time or experiencing long-term emotional/physical/mental damage, they 
+  would get more settlement money."),
+  
+  h2("Discussion"),
+  
+  p("There are many different types of allegations that are involved in police
+  misconduct cases. From failure to respond to medical care to malicious 
+  prosecution. There are so many ways that police can abuse their power and
+  harm the life of a citizen. Throughout this project, we looked at many 
+  different cities and all of their different police misconduct cases 
+  throughout the years. The purpose of our four research questions was to look 
+  at the bigger picture and dig deeper into the issue of police misconduct in
+  the United States. Since each case is so different and there are so many 
+  different outcomes to each case."),
+  
+  p("As we analyzed our data and made multiple charts and tables, we realized 
+    that a year with just one misconduct case’s settlement amount could be so 
+    high that it would be greater than other years that have many police 
+    misconduct cases. False arrest cases that result in long jail sentences
+    are often paid a great amount of settlement money, as well as serious 
+    excessive force cases. These settlements could reach as high as a couple 
+    of million dollars. In comparison to multiple minor cases such as an
+    illegal search that only gets a couple thousand each.  In addition, we
+    also looked into what usually happens when there is police misconduct. 
+    The importance of finding this answer was to look at all the different 
+    outcomes that someone could face while seeking justice for their police
+    misconduct case. There were limitations to finding an answer to this due
+    to the fact that every situation is different and there are so many
+    different factors that contribute to how the case could play out."),
+  
+  p("We also looked into why large amounts of settlements are being paid.
+    The importance of finding an answer to this is because police departments
+    always have funds to protect themselves and their workers from actually
+    facing real consequences for their actions and use money as a shield to
+    protect themselves. According to our data, over the past ten years, cities
+    have spent more than $3 billion to resolve misconduct lawsuits. It sounds 
+    like a lot of money, three billion dollars. The nation's three largest
+    cities which are Los Angeles, Chicago, and New Your had a combined budget 
+    of over $115 billion just last year, spending the largest chunk, of $2.5
+    billion over ten years. This is a massive amount of money to be spending 
+    on the wrongdoing of police officers."),
+  
+  h2("Conclusion"),
+  
+  p("Our main goal for this project was to spread awareness of police 
+    misconduct in the United States. In spite of the fact that police are 
+    there to protect citizens and maintain their safety, they frequently pose 
+    a threat to that safety. People worry about what will happen to them 
+    anytime they are stopped by the police or engaged with them because they 
+    are aware of what occurs to people across the country. It occurs frequently
+    and there are a lot of incidents of misconduct that happen. Cases of 
+    misconduct are brought up as a result of the abuse of power that police 
+    have over citizens. In the data analysis we have supplied throughout this
+    project, we have observed that they abuse their power."),
+  
+  p("The datasets that our project focused on were examples of misconduct in 
+  several American cities. The years of each case, the summary allegation, 
+  the city, and the settlement amount were the main factors that we 
+  concentrated on for the majority of our project. Each of these variables
+  helped us compare the police misconduct cases and settlements in each city.
+  Each city had a different amount of cases and settlements, and it just 
+  depends on the severity of a case."),
+  
+  p("It has become vital to hold police officers accountable for misconduct as 
+  the nation has seen incident after incident of police abuse. Police personnel 
+  still hardly face criminal charges, despite the increased attention. 
+  Therefore, when contact with the police goes wrong, victims' main means of 
+  obtaining justice and financial recompense is through civil lawsuits."),
+  
+  p("The best way for police misconduct cases to be reduced is by spreading
+    awareness of everything going on around the cities that we live in.
+    Advocacy plays a huge role in reducing injustice in the United States. 
+    People all over the country have served time for crimes they did not
+    commit and although they may have received settlement money that doesn’t 
+    make up for all the trauma that they were put through throughout the
+    process of fighting for that justice. Settlement money won’t help bring
+    back people that police have wrongfully killed, or make up for the years
+    that were lost while spending time in jail for a crime they did not commit.
+    Police need to be held more accountable and there should be a greater
+    punishment than just a license revoked."),
+  
+  h2("Acknowledgements"),
+  
+  p("We would like to thank Biftu Ibrahim for keeping us company during 
+    our meetings."),
+  
+  h2("References"),
+  
+  p(em("Alternatives to police services"),". Defund The Police. 
+       (2020, September 20). 
+       https://defundthepolice.org/alternatives-to-police-services/"),
+  
+  p("Civil Rights Division. (2020).", em("Addressing Police Misconduct Laws 
+                                         Enforced by the Department Of 
+                                         Justice"),". 
+    The United States Department of Justice. 
+    https://www.justice.gov/crt/addressing-police-misconduct-laws-
+    enforced-department-justice"),
+  
+  p("Edwards, F., Lee, H., Esposito, M. (2019). Risk of being killed by 
+    police use of force in the United States by age, race–ethnicity, and sex.",
+    em("Proceedings of the National Academy of Sciences"), 
+    "116(34), 16793–16798. https://doi.org/10.1073/pnas.1821204116"),
+  
+  p("Lum, C., Koper, C. S., & Wu, X. (2021). Can we really defund the police? 
+    A nine-agency study of police response to calls for service.", 
+    em("Police Quarterly"), 
+    ", 25(3), 255–280. https://doi.org/10.1177/10986111211035002"),
+  
+  p("Thomson-DeVeaux, A., Sharma, D., Bronner, L. (2021, February 22).",
+    em("Cities Spend Millions On Police Misconduct Every Year. 
+       Here’s Why It’s So Difficult to Hold Departments Accountable."), 
+    "FiveThirtyEight. 
+    Retrieved from 
+    https://fivethirtyeight.com/features/police-misconduct-costs-cities-
+    millions-every-year-but-thats-where-the-accountability-ends/")
   
 )
 

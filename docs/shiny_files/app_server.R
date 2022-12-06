@@ -195,11 +195,19 @@ server<- function(input, output) {
   # report table for dataset ------------------------------------------------
   
   output$datasetreport <- renderTable({
-    tab <- matrix(c(7, 5, 14, 19, 3, 2, 17, 6, 12), ncol=3, byrow=TRUE)
-    colnames(tab) <- c('colName1','colName2','colName3')
-    rownames(tab) <- c('rowName1','rowName2','rowName3')
-    tab <- as.table(tab)
-    tab
+    names <- c("all_cities.csv", "baltimore_edited.csv", "chicago_edited.csv",
+               "los_angeles_edited.csv", "new_york_edited.csv")
+    
+    colx <- c(3, 20, 24, 23, 21)
+    
+    rowx <- c(39066, 82, 1515, 997, 32632)
+    
+    dataset <- data.frame(File = names, 
+                                 Columns = colx,
+                                 Rows = rowx)
+    
+    table <- setDT(tabledfdataset)
+    table
     
   })
   
