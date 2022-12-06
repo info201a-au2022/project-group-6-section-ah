@@ -1,6 +1,7 @@
 library(shiny)
 library(tidyverse)
 library(plotly)
+library(data.table)
 
 all_cities_df <- read.csv("all_cities.csv") %>% 
   select(-X)
