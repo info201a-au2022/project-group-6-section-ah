@@ -24,7 +24,96 @@ intro_main_content <- mainPanel(
   settlements they establish with the victims and their families in major 
   American cities. This will examine the specific cases that take place and 
   the corresponding settlements."),
+
   
+  h1("Problem Domain"),
+  
+  h4(strong("Background")),
+  
+  p("Over the years, many police departments in major cities in the United 
+    States have spent hundreds of millions of taxpayer dollars on police 
+    misconduct settlements. But first, what exactly is determined as police 
+    misconduct? Police misconduct can be defined as law enforcement committing 
+    illegal and unethical acts on official duty. According to the United States
+    Department of Justice (DOJ), police misconduct can be included in 
+    “both", em("criminal"),"and", em("civil"), "statutes” 
+    (Civil Rights Division, 2020, para. 2)."),
+  
+  h4(strong("Human Values")),
+  
+  p("It is important to recognize the lives and experiences of victims of 
+    police misconduct. Police brutality, the ultimate form of police misconduct, 
+    has a racial disproportion against Black Americans. Black men are 2.5 times 
+    more likely to be killed by law enforcement compared to their white 
+    counterparts (Edwards, 2019, p. 16794). It is necessary to protest against 
+    the racial injustices Americans face from the very entity, law enforcement, 
+    meant to protect them."),
+  
+  h4(strong("Stakeholders")),
+  
+  p("Direct stakeholders of this data include: law enforcement personnel, 
+    government officials, and news journalists. Law enforcement is a direct 
+    stakeholder because the entire dataset is based upon their ability to do 
+    their job. They can reflect on this information and be more aware of the 
+    scenarios that may occur in their line of work. Journalists, specifically
+    those who specialize in justice and social issues, are also direct
+    stakeholders because they are able to utilize their resources and skills 
+    to publicize stories of police misconduct. An indirect stakeholder would
+    be Americans who read the articles written by those journalists and those 
+    who pay government taxes that law enforcement agencies use to pay
+    settlements for victims."),
+  
+  h4(strong("Harms & Benefits")),
+  
+  p("A possible result of this data could be a type of police reform. An 
+    example of this is the “Defund the Police” movement, which fights for the 
+    relocation of police funds, and to turn to alternative policing services 
+    (“Alternatives to police services,” 2020). This conversation often strikes
+    up debate about whether or not defunding the police is beneficial or not. 
+    The root and common denominator of all police misconduct are well, police.
+    Abolishing the police systems will certainly decrease the number of police
+    misconduct. However, there are possible harms and tradeoffs. It has been 
+    debated that abolishing the police will turn the nation into the “Purge,”
+    a dystopian society where all crimes are decriminalized for twelve hours. 
+    It has also been argued the police are frequently called for a wide variety
+    of reasons such as traffic disputes, everyday issues, suspicious behavior, 
+    etc (Lum et al., 2021, p. 271)."),
+  
+  h1("Research Questions"),
+  
+  p("1.", strong("Question:"), 
+    
+    "What is the typical occurrence/frequency of police misconduct in the US?"),
+  
+  p(strong("Importance:"), "As police misconduct involves police officers who 
+    are supposed to be under the law at any given time, it is important to know 
+    just how much police misconduct goes on within the police forces of the U.S.
+    Knowing its frequency will help figure out how prominent of a problem this
+    is."),
+  
+  p("2.", strong("Question:"), 
+    
+    "What kinds of cases are usually involved with police misconduct?"),
+  
+  p(strong("Importance:"), "This question gives more insight into how exactly 
+    police officers within the United States are using their power. This could 
+    be through excessive force, sexual assault, fraud, forceful confessions,
+    and more. Overall, we need to know more about the areas in which police 
+    abuse or exercise their power."),
+  
+  p("3.", strong("Question:"), 
+    
+    "What are some results of police misconduct cases?"),
+  
+  p(strong("Importance:"), "After finding out what examples of police 
+    misconduct occur throughout the country, the next thing to find out is 
+    what happens as a result of these cases. This question may be hard to 
+    answer, as not every case of police misconduct goes noticed, however, 
+    knowing what happens to cases that do go noticed is important to observe. 
+    Researching this question will reveal whether or not police officers are 
+    held accountable, or even if they are held accountable as equally 
+    as others."),
+    
   h1("Our Data"),
   
   p("We have 4 datasets that we have included in this project. One of them 
@@ -33,7 +122,43 @@ intro_main_content <- mainPanel(
     project used these datasets to focus on examples of misconduct in several 
     American cities. The years of each case, the summary allegation, and the 
     settlement amount were the main variables that we concentrated on for the 
-    majority of our project.")
+    majority of our project."),
+  
+  h1("Key Findings"),
+  
+  p("In this project, we had four different research questions in mind that we
+  wanted to find answers to help better understand the impact police misconduct
+  has on the United States."),
+  
+  p("The first question was “What is the typical occurrence/frequency of 
+    police misconduct in the US?”. One occurrence/frequency that stood out was
+    how a year with just one misconduct case’s settlement amount could be so 
+    high that it would be greater than other years that have many police
+    misconduct cases. This is because some cases are a lot more serious than 
+    others and require a lot more settlement money. Also, the cases with the
+    highest settlements in most cities are excessive force and false arrest
+    allegations. "),
+  
+  p("The second research question was “What kinds of cases are usually involved
+    with police misconduct?”. A lot of cases that are usually involved police
+    misconduct are civil rights violations, illegal searches, excessive force,
+    and false arrests. These cases often have pretty high settlement amounts 
+    and greater consequences for the officers involved since they are taken
+    more seriously and have a big impact on the victims and their families."),
+  
+  p("The third research question was “What are some results of police 
+  misconduct cases?”. Police misconduct cases are usually a long fight. There
+  are many steps such as an investigation, multiple court hearings, and
+  meetings with attorneys. And even then not all cases make it all the way to
+  get settlement amounts. But the cases that do make it, get settlement money 
+  and justice. Depending on the allegation of the misconduct the police 
+  officer(s) involved may get their license revoked or suspended. The 
+  settlement amount also depends on how serious the case is. For example, 
+  if someone were seriously injured or falsely imprisoned for a large amount
+  of time or experiencing long-term emotional/physical/mental damage, they 
+  would get more settlement money.")
+  
+  
 )
 
 intro_panel <- tabPanel(

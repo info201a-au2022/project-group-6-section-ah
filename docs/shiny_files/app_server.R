@@ -135,27 +135,6 @@ server<- function(input, output) {
   })
   
   
-  # chart 3 old -------------------------------------------------------------
-  output$chart6_plot <- renderPlotly({
-    amount_df <- all_cities_df %>% 
-      filter(city == input$chart3_city) %>% 
-      group_by(calendar_year) %>% 
-      summarize(amount_of_cases = length(amount_awarded))
-    
-    scatter_plot <- ggplot(data = amount_df, aes(x = calendar_year, y = amount_of_cases)) +
-      geom_point(size = input$sizes, color = "#6FABF9") +
-      scale_y_continuous(labels = scales::comma) +
-      xlim(input$chart3_years) +
-      ggtitle("") +
-      labs(
-        x = "Year",
-        y = "Amount of Cases",
-        color = "City",
-        caption = "")
-    
-    scatter_plot
-  })
-  
   # chart 3 -----------------------------------------------------------------
   
   output$chart3_plot <- renderPlotly({
@@ -214,11 +193,3 @@ server<- function(input, output) {
   
   
 }
-
-# test code ----
-
-df <- all_cities_df %>% 
-  filter(city == "Los Angeles" | city == "Memphis" |
-           city == "Chicago") %>% 
-  group_by(calendar_year, city) %>%
-  count()
